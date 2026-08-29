@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OrbitWatch — AI Satellite Telemetry Monitoring System
 
 A full-stack demo project: synthetic satellite telemetry, ML-based anomaly
@@ -127,3 +128,6 @@ anywhere other than `127.0.0.1:8000`, update `API_BASE` at the top of
   in `chatbot.py`).
 - Swap SQLite for Postgres later if you need multi-user access — the rest
   of the app only talks to `database.py`, so it's a small, contained change.
+=======
+# MajorProject
+>>>>>>> e72c09d8956cd0cc6e60fdd58f35110c7c8f145d
