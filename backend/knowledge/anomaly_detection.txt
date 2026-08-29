@@ -1,0 +1,19 @@
+HOW ANOMALY DETECTION WORKS IN THIS SYSTEM
+
+This system uses a two-stage approach. First, an unsupervised machine
+learning model (Isolation Forest) looks at all telemetry channels together
+for each satellite and flags points that are statistically unusual compared
+to that satellite's recent history -- it doesn't need to be told in advance
+what a fault looks like. Second, rule-based thresholds decide which
+specific parameter is responsible and whether the anomaly is "high
+priority" (a critical threshold breach that could threaten the mission) or
+"low priority" (a warning-level deviation worth watching but not urgent).
+
+High priority anomalies should be investigated first: they represent
+things like battery undervoltage, thermal extremes, major signal loss,
+critical fuel levels, or large attitude errors. Low priority anomalies are
+early warnings -- catching these early is exactly how you prevent them
+from becoming high priority.
+
+An anomaly can be marked "resolved" once it has been investigated and
+addressed, which removes it from the active/open list on the dashboard.

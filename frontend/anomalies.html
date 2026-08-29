@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anomalies — OrbitWatch</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="brand">🛰️ OrbitWatch</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="anomalies.html" class="active">Anomalies</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <h1 style="margin:0;">Anomaly Priority Board</h1>
+    <p class="subtle">Flagged by an Isolation Forest model across all satellites, triaged by severity.</p>
+
+    <div class="grid grid-3" style="margin-top:20px; max-width:600px;">
+      <div class="panel stat-card">
+        <div class="value" style="color:var(--high);" id="stat-high">–</div>
+        <div class="label">High Priority (Open)</div>
+      </div>
+      <div class="panel stat-card">
+        <div class="value" style="color:var(--low);" id="stat-low">–</div>
+        <div class="label">Low Priority (Open)</div>
+      </div>
+      <div class="panel stat-card">
+        <div class="value" id="stat-total">–</div>
+        <div class="label">Total Open</div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px; display:flex; gap:10px;">
+      <button class="filter-btn primary" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="high">High Priority</button>
+      <button class="filter-btn" data-filter="low">Low Priority</button>
+    </div>
+
+    <div class="panel" style="margin-top:16px;">
+      <table id="anomaly-table">
+        <thead>
+          <tr><th>Time</th><th>Satellite</th><th>Parameter</th><th>Value</th><th>Severity</th><th>Description</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="no-anomalies" class="subtle" style="display:none; padding-top:10px;">No open anomalies 🎉</p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/anomalies.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

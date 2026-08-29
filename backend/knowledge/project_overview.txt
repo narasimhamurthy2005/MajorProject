@@ -1,0 +1,16 @@
+PROJECT OVERVIEW
+
+This is an AI-based satellite telemetry monitoring system built as a
+final-year major project. It gives a ground-control-style single view of
+multiple satellites' health: a 3D animated home page, a live dashboard
+per satellite, a prioritized (high/low) list of detected anomalies, and
+this chatbot for asking questions in plain language.
+
+Architecture: a FastAPI + SQLite backend generates and stores synthetic
+telemetry, runs Isolation Forest based anomaly detection, and serves a
+small JSON API. A plain HTML/CSS/JavaScript frontend (with Three.js for
+the 3D visuals and Chart.js for the graphs) polls that API to stay
+up to date. The chatbot uses retrieval-augmented generation (RAG): your
+question is matched via TF-IDF similarity against this knowledge base,
+and if you mention a specific satellite, its live telemetry and open
+anomalies are pulled in as extra context for the answer.

@@ -1,0 +1,22 @@
+ABOUT THE SATELLITE FLEET (SIMULATED)
+
+This is a simulated fleet used for demonstration since we don't have
+access to a real satellite ground station. Six satellites are modeled,
+covering common real-world mission types:
+
+- Aryabhata-Sim-1: Earth Observation satellite in Low Earth Orbit (LEO),
+  ~550 km altitude.
+- VaruNet-2: Weather satellite in LEO, ~820 km altitude.
+- Comsat-Delta: Communication satellite in Geostationary Orbit (GEO),
+  ~35,786 km altitude.
+- NavIC-Lite-4: Navigation satellite in Medium Earth Orbit (MEO),
+  ~20,200 km altitude.
+- HeliosScope-1: Scientific research satellite in LEO, ~610 km altitude.
+- TerraLink-7: Communication satellite in LEO, ~500 km altitude.
+
+Each satellite continuously produces synthetic telemetry that mimics real
+orbital behavior -- for example, LEO satellites swing between hot and cold
+roughly every 90-95 minutes as they pass in and out of sunlight, and solar
+panel output dips during that eclipse period. Faults are randomly injected
+into the data stream so the anomaly detector and dashboard always have
+real signals to work with.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — OrbitWatch</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="brand">🛰️ OrbitWatch</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="anomalies.html">Anomalies</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <h1 style="margin:0;">Satellite Dashboard</h1>
+      <div>
+        <label for="sat-select" class="subtle" style="margin-right:8px; font-size:13px;">Satellite:</label>
+        <select id="sat-select"></select>
+      </div>
+    </div>
+    <p id="sat-meta" class="subtle" style="margin-top:4px;"></p>
+
+    <div class="grid grid-4" id="health-cards" style="margin-top:20px;"></div>
+
+    <div class="grid grid-2" style="margin-top:20px;">
+      <div class="panel">
+        <h3 style="margin-top:0;">Temperature &amp; Battery Voltage</h3>
+        <canvas id="chart-temp-batt" height="160"></canvas>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Solar Output &amp; Signal Strength</h3>
+        <canvas id="chart-solar-signal" height="160"></canvas>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px;">
+      <h3 style="margin-top:0;">Recent Anomalies for this Satellite</h3>
+      <table id="sat-anomaly-table">
+        <thead><tr><th>Time</th><th>Parameter</th><th>Severity</th><th>Description</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p id="no-anomalies" class="subtle" style="display:none;">No anomalies detected for this satellite yet.</p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
